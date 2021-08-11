@@ -1,15 +1,18 @@
 package br.com.zup.autores.model
 
 import java.time.LocalDateTime
+import javax.persistence.Embedded
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
 import javax.persistence.Id
+import javax.validation.constraints.NotNull
 
 @Entity
 class Autor(
     val nome: String?,
     val email: String?,
-    var descricao: String?
+    var descricao: String?,
+    @field:Embedded val endereco: Endereco
 ) {
     @Id
     @GeneratedValue
